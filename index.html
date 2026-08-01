@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Skill Link</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<header>
+
+<h1>Skill Link</h1>
+
+<p id="userName"></p>
+
+</header>
+
+<div class="card">
+
+<h2>現在のポイント</h2>
+
+<div class="pointArea">
+
+    <div class="pointNumber">
+
+        <h1 id="point">0 pt</h1>
+
+        <h3 id="cardNumber">スタンプカード 1枚目</h3>
+
+    </div>
+
+    <div id="stampCard" class="stampCard">
+
+    </div>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>カテゴリー</h2>
+
+<div class="category">
+
+<a href="input.html?category=communication">
+<button>
+💬 コミュニケーション
+</button>
+</a>
+
+<a href="input.html?category=technology">
+<button>
+🛠 技術継承
+</button>
+</a>
+
+<a href="input.html?category=growth">
+<button>
+📖 自己成長
+</button>
+</a>
+
+<a href="input.html?category=contribution">
+<button>
+🏢 組織貢献
+</button>
+</a>
+
+</div>
+
+</div>
+
+<a href="history.html">
+
+<button>
+
+📋 活動履歴を見る
+
+</button>
+
+</a>
+
+<button onclick="resetPoint()">ポイントをリセット</button>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
+
+<br><br>
+
+<button onclick="logout()">
+
+ログアウト
+
+</button>
+
+<br><br>
+
+<a href="employee.html">
+
+<button>
+
+👥 社員一覧
+
+</button>
+
+</a>

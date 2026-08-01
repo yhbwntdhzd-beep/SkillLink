@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+
+<html lang="ja">
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>コミュニケーション</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<header>
+
+<h1>Skill Link</h1>
+
+</header>
+
+<div class="card">
+
+<h2>コミュニケーション</h2>
+
+<h1 id="point"></h1>
+
+<h3>上司・部下とご飯 (+1)</h3>
+
+<label>誰と行きましたか？（必須）</label><br>
+
+<input
+type="text"
+id="mealName"
+placeholder="例：山田課長">
+
+<br><br>
+
+<label>話した内容（任意）</label><br>
+
+<input
+type="text"
+id="mealMemo"
+placeholder="例：仕事の相談">
+
+<br><br>
+
+<button onclick="registerMeal()">
+
+登録
+
+</button>
+
+<hr>
+
+<h3>社内イベント参加 (+2)</h3>
+
+<label>イベント名（必須）</label><br>
+
+<input
+type="text"
+id="eventName">
+
+<br><br>
+
+<label>内容（任意）</label><br>
+
+<input
+type="text"
+id="eventMemo">
+
+<br><br>
+
+<button onclick="registerEvent()">
+
+登録
+
+</button>
+
+<hr>
+
+<h3>失敗事例共有 (+3)</h3>
+
+<label>共有した内容（必須）</label><br>
+
+<input
+type="text"
+id="failureName">
+
+<br><br>
+
+<label>学んだこと（任意）</label><br>
+
+<input
+type="text"
+id="failureMemo">
+
+<br><br>
+
+<button onclick="registerFailure()">
+
+登録
+
+</button>
+
+<br><br>
+
+<a href="index.html">
+
+<button>
+← ホームへ戻る
+</button>
+
+</a>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>

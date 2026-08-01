@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>Skill Link</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<header>
+
+<h1>Skill Link</h1>
+
+</header>
+
+<div class="card">
+
+<h2 id="categoryTitle"></h2>
+
+<h3 id="point"></h3>
+
+<label>活動内容</label>
+
+<br>
+
+<select id="activity" onchange="changeLabel()">
+</select>
+
+<br><br>
+
+<label id="requiredLabel">
+
+必須入力
+
+</label>
+
+<br>
+
+<input
+type="text"
+id="requiredInput">
+
+<br><br>
+
+<label id="optionalLabel">
+
+任意入力
+
+</label>
+
+<br>
+
+<input
+type="text"
+id="optionalInput">
+
+<br><br>
+
+<button onclick="registerActivity()">
+
+登録
+
+</button>
+
+<br><br>
+
+<a href="index.html">
+
+<button>
+
+←ホームへ戻る
+
+</button>
+
+</a>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
