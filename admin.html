@@ -5,7 +5,9 @@
 
 <meta charset="UTF-8">
 
-<title>社員管理</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>社員管理 - Skill Link</title>
 
 <link rel="stylesheet" href="style.css">
 
@@ -23,31 +25,31 @@
 
 <h2>社員登録</h2>
 
-<label>社員番号</label>
+<label for="newId">社員番号</label>
 
 <br>
 
-<input type="text" id="newId">
+<input type="text" id="newId" placeholder="社員番号を入力">
 
 <br><br>
 
-<label>名前</label>
+<label for="newName">名前</label>
 
 <br>
 
-<input type="text" id="newName">
+<input type="text" id="newName" placeholder="名前を入力">
 
 <br><br>
 
-<label>パスワード</label>
+<label for="newPassword">パスワード</label>
 
 <br>
 
-<input type="password" id="newPassword">
+<input type="password" id="newPassword" placeholder="パスワードを入力">
 
 <br><br>
 
-<button onclick="addUser()">
+<button id="addUserButton">
 
 社員を追加
 
@@ -57,7 +59,7 @@
 
 <a href="login.html">
 
-<button>
+<button type="button">
 
 ログインへ戻る
 
@@ -67,7 +69,7 @@
 
 </div>
 
-<script src="admin.js"></script>
+<script type="module" src="admin.js"></script>
 
 </body>
 
