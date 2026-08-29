@@ -1,6 +1,6 @@
-//================================
+//=============================
 // Firebase
-//================================
+//=============================
 
 import { db } from "./firebase.js";
 
@@ -11,49 +11,83 @@ import {
 } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
 
 
-//================================
+//=============================
+// 管理者チェック
+//=============================
+
+const loginUser =
+    JSON.parse(localStorage.getItem("loginUser"));
+
+if(loginUser == null){
+
+    location.href = "login.html";
+
+}
+
+if(loginUser && loginUser.id != "admin"){
+
+    alert("管理者のみ利用できます。");
+
+    location.href = "index.html";
+
+}
+
+
+//=============================
 // 社員追加
-//================================
+//=============================
 
 async function addUser(){
 
-    // 入力値を取得
-    const id = document.getElementById("newId").value.trim();
+    // 入力値取得
+    const id =
+        document.getElementById("newId").value.trim();
 
-    const name = document.getElementById("newName").value.trim();
+    const name =
+        document.getElementById("newName").value.trim();
 
-    const password = document.getElementById("newPassword").value.trim();
+    const password =
+        document.getElementById("newPassword").value.trim();
 
 
+    //=============================
     // 入力チェック
+    //=============================
+
     if(id === "" || name === "" || password === ""){
 
-        alert("社員番号・名前・パスワードをすべて入力してください。");
+        alert("すべて入力してください。");
 
         return;
 
     }
 
 
+    //=============================
+    // Firebaseから社員番号を検索
+    //=============================
+
     try{
 
-        // Firestoreのusersから社員番号を確認
         const userRef = doc(db, "users", id);
 
         const snapshot = await getDoc(userRef);
 
 
-        // すでに存在する場合
+        // すでに登録されている場合
         if(snapshot.exists()){
 
-            alert("この社員番号はすでに登録されています。");
+            alert("この社員番号は既に登録されています。");
 
             return;
 
         }
 
 
+        //=============================
         // Firebaseへ社員情報を保存
+        //=============================
+
         await setDoc(userRef, {
 
             id: id,
@@ -67,7 +101,10 @@ async function addUser(){
         });
 
 
+        //=============================
         // 登録成功
+        //=============================
+
         alert("社員を登録しました！");
 
 
@@ -81,20 +118,20 @@ async function addUser(){
 
     }catch(error){
 
-        console.error("社員登録エラー:", error);
+        console.error(error);
 
-        alert("社員登録に失敗しました。\nConsoleを確認してください。");
+        alert(
+            "社員登録に失敗しました。\n" +
+            "Firebaseの設定を確認してください。"
+        );
 
     }
 
 }
 
 
-//================================
-// ボタンに登録処理を設定
-//================================
+//=============================
+// ボタンからaddUserを使えるようにする
+//=============================
 
-document.getElementById("addUserButton").addEventListener(
-    "click",
-    addUser
-);
+window.addUser = addUser;
